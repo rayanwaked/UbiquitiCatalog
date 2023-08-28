@@ -10,16 +10,7 @@ export function Product({devices}: ProductProps) {
     }
 
     return (
-        <div>
-            {/*{devices.map((device, index) => (*/}
-            {/*    <div key={index}>*/}
-            {/*        <p>Line Name: {device.line?.name}</p>*/}
-            {/*        <p>Id: {device.line?.id}</p>*/}
-            {/*        <p>Name: {device.product?.name}</p>*/}
-            {/*        <p>Shortname: {device.shortnames}</p>*/}
-            {/*        <p>Max Power: {device.unifi?.network?.radios?.na?.maxPower} W</p>*/}
-            {/*    </div>*/}
-            {/*))}*/}
+        <div className={"productLine"}>
             {devices.map((device, index) => (
                 <ClickableDevice key={index} device={device}/>
             ))}

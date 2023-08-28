@@ -1,27 +1,28 @@
 'use client';
 
 import * as React from "react";
+import Link from "next/link";
 import {handleDeviceClick} from "@/app/catalog/product/data";
 import {ProductProps} from "@/app/catalog/data";
-import Link from "next/link";
 
+// Create an interface for the devices
 interface ClickableDeviceProps {
-    device: ProductProps['devices'][0]; // Assuming devices is an array of objects
+    device: ProductProps['devices'][0];
 }
 
+// Display the data to the user
 const ClickableDevice: React.FC<ClickableDeviceProps> = ({device}) => {
+    // Handle user clicks
     const handleClick = () => {
         handleDeviceClick(device.line?.name || "");
     };
 
+    // Display the data, direct the user to the Product page, and pass the data
     return (
-        <Link href={`catalog/device/${device.line?.id}`} passHref>
+        <Link href={`catalog/product/${device.line?.id}`} passHref>
             <div onClick={handleClick}>
                 <p>Line Name: {device.line?.name}</p>
-                <p>Id: {device.line?.id}</p>
                 <p>Name: {device.product?.name}</p>
-                <p>Shortname: {device.shortnames}</p>
-                <p>Max Power: {device.unifi?.network?.radios?.na?.maxPower} W</p>
             </div>
         </Link>
     );
