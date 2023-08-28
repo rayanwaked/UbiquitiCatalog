@@ -8,11 +8,11 @@ export default function GetDeviceName() {
     useEffect(() => {
         const queryParams = new URLSearchParams(window.location.search);
         const name = queryParams.get("deviceName");
-        console.log("Retrieved device name:", name);
+        // console.log("Retrieved device name:", name);
 
         // Only update the deviceName state if name is not null
         if (name !== null) {
-            console.log("Setting device name:", name);
+            // console.log("Setting device name:", name);
             setDeviceName(name);
         }
     }, []);
@@ -25,11 +25,11 @@ export function findDeviceByName(
     devices: ProductProps['devices']
 ) {
     const foundDevice = devices?.find((device) => {
-        console.log("Comparing device name:", device.product?.name);
-        console.log("With provided name:", deviceName);
+        // console.log("Comparing device name:", device.product?.name);
+        // console.log("With provided name:", deviceName);
         return device.product?.name === deviceName;
     });
 
-    console.log("Found device", foundDevice);
+    // console.log("Found device", foundDevice);
     return foundDevice || null;
 }
