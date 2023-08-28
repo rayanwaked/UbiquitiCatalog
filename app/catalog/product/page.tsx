@@ -13,7 +13,6 @@ export default function ProductPage() {
         deviceLine: '',
         deviceImageId: '',
     });
-    const [dataFetched, setDataFetched] = useState(false); // Track data fetching status
 
     const deviceName = GetDeviceName();
 
@@ -34,8 +33,6 @@ export default function ProductPage() {
                         deviceLine: deviceLine,
                         deviceImageId: "https://static.ui.com/fingerprint/ui/icons/" + deviceImageId + "_257x257.png",
                     });
-
-                    setDataFetched(true); // Mark data as fetched
                 }
             } catch (error) {
                 console.error('Error fetching and finding device:', error);
