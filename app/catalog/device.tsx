@@ -1,9 +1,13 @@
 'use client';
 
-import * as React from "react";
+import React from "react";
 import Link from "next/link";
-import {handleDeviceClick} from "@/app/catalog/product/data";
 import {ProductProps} from "@/app/catalog/data";
+
+// Handle user interactions on Catalog
+export function handleDeviceClick(deviceName: string) {
+    console.log('Clicked device name:', deviceName);
+}
 
 // Create an interface for the devices
 interface ClickableDeviceProps {
@@ -14,12 +18,19 @@ interface ClickableDeviceProps {
 const ClickableDevice: React.FC<ClickableDeviceProps> = ({device}) => {
     // Handle user clicks
     const handleClick = () => {
-        handleDeviceClick(device.line?.name || "");
+        handleDeviceClick(device.product?.name || "");
     };
 
-    // Display the data, direct the user to the Product page, and pass the data
+    // Check if device is defined before using its properties
+    if (!device) {
+        return <div>No device found.</div>;
+    }
+
+    // Display the data and direct the user to the device page on click
     return (
-        <Link href={`catalog/product/${device.line?.id}`} passHref>
+        <Link
+            href={`/catalog/product?deviceName=${encodeURIComponent(
+                device.product?.name || "")}`} passHref>
             <div onClick={handleClick}>
                 <p>Line Name: {device.line?.name}</p>
                 <p>Name: {device.product?.name}</p>
