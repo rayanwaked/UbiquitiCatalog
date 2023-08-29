@@ -1,6 +1,4 @@
 .catalogTable {
-    width: 100vw;
-
     margin: 0 32px 0 32px;
 
     font-family: "UI Sans", sans-serif;
@@ -22,8 +20,6 @@
     font-size: 14px;
 
     height: 32px;
-
-    margin-right: 5vw;
 }
 
 .catalogNameColor {
@@ -60,7 +56,7 @@
     display: flex;
     align-content: flex-start;
 
-    width: 46vw;
+    width: calc(50vw - 20px - 16px - 32px);
 
     margin: 0 8px 0 8px;
 }
@@ -69,7 +65,7 @@
     display: flex;
     align-content: flex-start;
 
-    width: 46vw;
+    width: calc(50vw - 20px - 16px - 32px);
 
     margin: 0 8px 0 8px;
     padding-right: 15vw;
