@@ -8,11 +8,13 @@ import GridIcon from "../public/gridicon.svg"
 export default function SearchBar() {
     return (
         <div className={"searchBarContainer"}>
-            <div className={"searchBar"}>
-                <Image className={"searchBarIcon"} src={SearchIcon} alt={"Icon"} width={14} height={14}/>
-                <input placeholder={"Search"}/>
+            <div className={"searchBarAndCount"}>
+                <div className={"searchBar"}>
+                    <Image className={"searchBarIcon"} src={SearchIcon} alt={"Icon"} width={14} height={14}/>
+                    <input placeholder={"Search"}/>
+                </div>
+                <p className={"searchBarCount"}>123 Devices</p>
             </div>
-            <p className={"searchBarCount"}>123 Devices</p>
             <div className={"spacer"}/>
             <div className={"searchBarControls"}>
                 <Image className={"searchBarIcon"} src={ListIcon} alt={"Icon"} width={14} height={14}/>
