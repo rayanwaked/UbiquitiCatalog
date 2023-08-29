@@ -4,6 +4,10 @@
     width: calc(100vw - 32px);
 }
 
+.catalogTable tr {
+    border-bottom: 1px solid rgb(237, 237, 240);
+}
+
 .catalogTableHeader {
     display: flex;
     flex-direction: row;
@@ -16,6 +20,10 @@
     height: 32px;
 }
 
+.catalogNameColor {
+    color: rgb(0, 0, 0) !important;
+}
+
 .catalogTableBody {
     display: flex;
     flex-direction: row;
@@ -26,6 +34,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    height: 32px;
+
+    color: rgba(0, 0, 0, 0.65)
 }
 
 .catalogTableColumnOne {
@@ -34,6 +46,8 @@
 
     width: 20px;
     height: 20px;
+
+    margin: 8px;
 }
 
 .catalogTableColumnTwo {
@@ -41,6 +55,8 @@
     align-content: flex-start;
 
     width: 45vw;
+
+    margin: 6px 8px 6px 8px;
 }
 
 .catalogTableColumnThree {
@@ -48,6 +64,10 @@
     align-content: flex-start;
 
     width: 45vw;
+
+    margin: 6px 8px 6px 8px;
+
+    color: rgba(0, 0, 0, 0.45)
 }
 
 .deviceTableRow {

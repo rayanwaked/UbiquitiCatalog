@@ -31,7 +31,7 @@ export default async function CatalogPage() {
                 <tr className={"catalogTableHeader"}>
                     <th className={"catalogTableColumnOne"}></th>
                     <th className={"catalogTableColumnTwo"}>Product Line</th>
-                    <th className={"catalogTableColumnThree"}>Name</th>
+                    <th className={"catalogTableColumnThree catalogNameColor"}>Name</th>
                 </tr>
                 </thead>
 
