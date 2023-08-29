@@ -17,7 +17,7 @@ export default function RootLayout({
             <title>Ubiquiti Catalog</title>
             <link rel="manifest" href="/manifest.json"/>
             <link rel="apple-touch-icon" href="../public/logo_512.png"></link>
-            <meta name="theme-color" content="#000"/>
+            <meta name="theme-color" content="#fff"/>
         </head>
         <body>{children}</body>
         </html>
