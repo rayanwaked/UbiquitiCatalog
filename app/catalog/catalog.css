@@ -1,8 +1,10 @@
-.productTable {
+.catalogTable {
     margin-left: 32px;
+
+    width: calc(100vw - 32px);
 }
 
-.productTableHeader {
+.catalogTableHeader {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -10,9 +12,23 @@
     font-family: "UI Sans Bold", sans-serif;
     font-weight: bold;
     font-size: 14px;
+
+    height: 32px;
 }
 
-.productTableColumnOne {
+.catalogTableBody {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.catalogTableRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.catalogTableColumnOne {
     display: flex;
     align-content: flex-start;
 
@@ -20,14 +36,14 @@
     height: 20px;
 }
 
-.productTableColumnTwo {
+.catalogTableColumnTwo {
     display: flex;
     align-content: flex-start;
 
     width: 45vw;
 }
 
-.productTableColumnThree {
+.catalogTableColumnThree {
     display: flex;
     align-content: flex-start;
 

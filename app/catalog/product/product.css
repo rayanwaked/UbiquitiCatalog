@@ -1,0 +1,21 @@
+.productTableColumnOne {
+    display: flex;
+    align-content: flex-start;
+
+    width: 20px;
+    height: 20px;
+}
+
+.productTableColumnTwo {
+    display: flex;
+    align-content: flex-start;
+
+    width: 45vw;
+}
+
+.productTableColumnThree {
+    display: flex;
+    align-content: flex-start;
+
+    width: 45vw;
+}

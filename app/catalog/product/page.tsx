@@ -45,18 +45,26 @@ export default function ProductPage() {
     return (
         <div>
             <title>{productInfo.deviceName}</title>
-            <div style={{position: 'relative', width: '257px', height: '257px'}}>
-                <Image
-                    src={productInfo.deviceImageId || placeholder}
-                    alt={"Product Image"}
-                    width={257}
-                    height={257}
-                    sizes="(max-width: 257px) 100vw, 257px"
-                />
-            </div>
-            <p>Device Name: {productInfo.deviceName}</p>
-            <p>Product ID: {productInfo.deviceId}</p>
-            <p>Product Line: {productInfo.deviceLine}</p>
+            <table>
+                <tbody>
+                <tr>
+                    <td>
+                        <div style={{position: 'relative', width: '257px', height: '257px'}}>
+                            <Image
+                                src={productInfo.deviceImageId || placeholder}
+                                alt={"Product Image"}
+                                width={257}
+                                height={257}
+                                sizes="(max-width: 257px) 100vw, 257px"
+                            />
+                        </div>
+                    </td>
+                    <td className={"productTableColumnOne"}>Device Name: {productInfo.deviceName}</td>
+                    <td className={"productTableColumnTwo"}>Product ID: {productInfo.deviceId}</td>
+                    <td className={"productTableColumnThree"}>Product Line: {productInfo.deviceLine}</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     );
 }
