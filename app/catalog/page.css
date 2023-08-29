@@ -1,0 +1,37 @@
+.productTable {
+
+}
+
+.productTableHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    font-family: "UI Sans Bold", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+
+    padding-left: 44px;
+}
+
+.productTableColumnOne {
+    display: flex;
+    align-content: flex-start;
+
+    width: 36px;
+    height: 36px;
+}
+
+.productTableColumnTwo {
+    display: flex;
+    align-content: flex-start;
+
+    width: 45vw;
+}
+
+.productTableColumnThree {
+    display: flex;
+    align-content: flex-start;
+
+    width: 45vw;
+}

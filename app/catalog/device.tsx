@@ -20,13 +20,17 @@ const ClickableDevice: React.FC<ClickableDeviceProps> = ({device}) => {
     // Display the data and direct the user to the device page on click
     return (
         <Link href={`/catalog/product?deviceName=${encodeURIComponent(device.product?.name || "")}`} passHref>
-            <div>
-                <Image src={"https://static.ui.com/fingerprint/ui/icons/" + device.icon?.id + "_257x257.png"}
-                       alt={"Product" +
-                           " Icon"} width={36} height={36}/>
-                <p>{device.line?.name}</p>
-                <p>{device.product?.name}</p>
-            </div>
+            <table>
+                <tbody>
+                <tr>
+                    <td><Image src={"https://static.ui.com/fingerprint/ui/icons/" + device.icon?.id + "_257x257.png"}
+                               alt={"Product" +
+                                   " Icon"} width={20} height={20}/></td>
+                    <td><p>{device.line?.name}</p></td>
+                    <td><p>{device.product?.name}</p></td>
+                </tr>
+                </tbody>
+            </table>
         </Link>
     );
 };

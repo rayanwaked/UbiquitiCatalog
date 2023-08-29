@@ -26,13 +26,21 @@ export default async function CatalogPage() {
 
     return (
         <div>
-            <div className={""}>
-                <p>Product Line</p>
-                <p>Name</p>
-            </div>
-            <div>
-                <Product devices={devices}/>
-            </div>
+            <table className={"productTable"}>
+                <thead>
+                <tr className={"productTableHeader"}>
+                    <th className={"productTableColumnOne"}></th>
+                    <th className={"productTableColumnTwo"}>Product Line</th>
+                    <th className={"productTableColumnThree"}>Name</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><Product devices={devices}/></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     );
 }
