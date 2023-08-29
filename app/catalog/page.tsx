@@ -1,6 +1,13 @@
 import React from "react";
+import "./page.css"
 import {getData, ProductProps} from "@/app/catalog/data";
 import ClickableDevice from "@/app/catalog/device";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: "Ubiquiti Products",
+    description: "Browse and learn about Ubiquiti's products",
+}
 
 // Iterate through the data using ProductProps and display the data
 export function Product({devices}: ProductProps) {
@@ -19,7 +26,10 @@ export default async function CatalogPage() {
 
     return (
         <div>
-            <h1>Catalog</h1>
+            <div className={""}>
+                <p>Product Line</p>
+                <p>Name</p>
+            </div>
             <div>
                 <Product devices={devices}/>
             </div>

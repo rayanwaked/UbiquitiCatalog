@@ -1,0 +1,28 @@
+/*@font-face {*/
+/*    font-family: "UI Sans";*/
+/*    src: url("../public/fonts/ui-sans-v7-regular.woff2") format("woff2");*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*}*/
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 32px 0 0;
+
+    color: rgb(128, 136, 147);
+    background-color: rgb(244, 245, 246);
+
+    font-family: "UI Sans", sans-serif;
+    font-size: 14px;
+}
+
+.navBarImage {
+    margin-right: 16px;
+}
+
+.spacer {
+    flex-grow: 1;
+}

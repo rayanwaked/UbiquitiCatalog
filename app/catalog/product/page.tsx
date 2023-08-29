@@ -39,11 +39,12 @@ export default function ProductPage() {
             }
         }
 
-        fetchDataAndFindDevice();
-    }, [deviceName]);
+        fetchDataAndFindDevice().then();
+    }, [deviceName, setProductInfo]);
 
     return (
         <div>
+            <title>{productInfo.deviceName}</title>
             <div style={{position: 'relative', width: '257px', height: '257px'}}>
                 <Image
                     src={productInfo.deviceImageId || placeholder}
