@@ -20,6 +20,8 @@
     font-size: 14px;
 
     height: 32px;
+
+    width: calc(100vw - 20px - 16px - 32px);
 }
 
 .catalogNameColor {

@@ -1,10 +1,3 @@
-/*@font-face {*/
-/*    font-family: "UI Sans";*/
-/*    src: url("../public/fonts/ui-sans-v7-regular.woff2") format("woff2");*/
-/*    font-weight: normal;*/
-/*    font-style: normal;*/
-/*}*/
-
 .navBar {
     display: flex;
     align-items: center;

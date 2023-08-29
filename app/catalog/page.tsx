@@ -3,6 +3,7 @@ import "./catalog.css"
 import {getData, ProductProps} from "@/app/catalog/data";
 import ClickableDevice from "@/app/catalog/device";
 import {Metadata} from "next";
+import SearchBar from "@/components/searchbar";
 
 export const metadata: Metadata = {
     title: "Ubiquiti Catalog",
@@ -26,6 +27,7 @@ export default async function CatalogPage() {
 
     return (
         <div>
+            <SearchBar/>
             <table className={"catalogTable"}>
                 <thead>
                 <tr className={"catalogTableHeader"}>
