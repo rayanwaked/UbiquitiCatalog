@@ -13,6 +13,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
+        <head>
+            <title>Ubiquiti Catalog</title>
+            <link rel="manifest" href="/manifest.json"/>
+        </head>
         <body>{children}</body>
         </html>
     )
