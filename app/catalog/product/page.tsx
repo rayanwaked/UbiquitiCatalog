@@ -2,10 +2,10 @@
 
 import React, {useEffect, useState} from "react";
 import Image from "next/image";
-import placeholder from "../../../public/placeholder.png"
+import placeholder from "../../../public/placeholder.png";
 import GetDeviceName, {findDeviceByName} from "@/app/catalog/product/data";
 import {getData} from "@/app/catalog/data";
-import "./product.css"
+import "./product.css";
 
 export default function ProductPage() {
     const [productInfo, setProductInfo] = useState({

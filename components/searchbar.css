@@ -31,10 +31,33 @@
     padding-left: 8px;
 }
 
+.searchBar input {
+    background: none;
+    width: 260px;
+}
+
+.searchBar input:focus {
+    outline: none;
+}
+
 .searchBarCount {
-    margin-left: 16px;
+    padding-left: 16px;
 
     font-size: 12px;
 
     color: #BDBDBD;
+}
+
+.searchBarIcon {
+    margin-right: 6px;
+}
+
+.searchBarControls {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+}
+
+.spacer {
+    flex-grow: 1;
 }

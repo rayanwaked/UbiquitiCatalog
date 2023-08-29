@@ -1,5 +1,5 @@
 import React from "react";
-import "./catalog.css"
+import "./catalog.css";
 import {getData, ProductProps} from "@/app/catalog/data";
 import ClickableDevice from "@/app/catalog/device";
 import {Metadata} from "next";

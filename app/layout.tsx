@@ -1,5 +1,5 @@
-import "./globals.css"
-import type {Metadata} from "next"
+import "./globals.css";
+import type {Metadata} from "next";
 import NavBar from "@/components/navbar";
 import React from "react";
 
