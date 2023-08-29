@@ -1,7 +1,11 @@
 .catalogTable {
+    width: 100vw;
+
     margin-left: 32px;
 
-    width: calc(100vw - 32px);
+    font-family: "UI Sans", sans-serif;
+    font-weight: normal;
+    font-size: 14px;
 }
 
 .catalogTable tr {
@@ -35,7 +39,7 @@
     flex-direction: row;
     align-items: center;
 
-    height: 32px;
+    min-height: 32px;
 
     color: rgba(0, 0, 0, 0.65)
 }
@@ -47,7 +51,7 @@
     width: 20px;
     height: 20px;
 
-    margin: 8px;
+    margin: 0 8px 0 8px;
 }
 
 .catalogTableColumnTwo {
@@ -56,7 +60,7 @@
 
     width: 45vw;
 
-    margin: 6px 8px 6px 8px;
+    margin: 0 8px 0 8px;
 }
 
 .catalogTableColumnThree {
@@ -65,7 +69,7 @@
 
     width: 45vw;
 
-    margin: 6px 8px 6px 8px;
+    margin: 0 8px 0 8px;
 
     color: rgba(0, 0, 0, 0.45)
 }

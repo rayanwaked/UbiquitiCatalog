@@ -5,7 +5,7 @@ import ClickableDevice from "@/app/catalog/device";
 import {Metadata} from "next";
 
 export const metadata: Metadata = {
-    title: "Ubiquiti Products",
+    title: "Ubiquiti Catalog",
     description: "Browse and learn about Ubiquiti's products",
 }
 

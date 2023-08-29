@@ -1,21 +1,32 @@
-.productTableColumnOne {
+.productGrid {
     display: flex;
-    align-content: flex-start;
+    flex-direction: row;
 
-    width: 20px;
-    height: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
-.productTableColumnTwo {
-    display: flex;
-    align-content: flex-start;
-
-    width: 45vw;
+.productTable {
 }
 
-.productTableColumnThree {
-    display: flex;
-    align-content: flex-start;
+/*.productTableColumnOne {*/
+/*    display: flex;*/
+/*    align-content: flex-start;*/
 
-    width: 45vw;
-}
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*}*/
+
+/*.productTableColumnTwo {*/
+/*    display: flex;*/
+/*    align-content: flex-start;*/
+
+/*    width: 45vw;*/
+/*}*/
+
+/*.productTableColumnThree {*/
+/*    display: flex;*/
+/*    align-content: flex-start;*/
+
+/*    width: 45vw;*/
+/*}*/

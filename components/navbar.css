@@ -23,12 +23,6 @@
     font-size: 14px;
 }
 
-.stickyNavBar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
 .navBarImage {
     margin-right: 16px;
 }

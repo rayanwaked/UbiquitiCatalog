@@ -1,5 +1,7 @@
 import "./globals.css"
 import type {Metadata} from "next"
+import NavBar from "@/components/navbar";
+import React from "react";
 
 export const metadata: Metadata = {
     title: "Ubiquiti Catalog",
@@ -14,12 +16,15 @@ export default function RootLayout({
     return (
         <html lang="en">
         <head>
-            <title>Ubiquiti Catalog</title>
             <link rel="manifest" href="/manifest.json"/>
             <link rel="apple-touch-icon" href="../public/logo_512.png"></link>
-            <meta name="theme-color" content="#fff"/>
         </head>
-        <body>{children}</body>
+        <body>
+        <div style={{position: "sticky", top: 0, zIndex: 100}}>
+            <NavBar/>
+        </div>
+        {children}
+        </body>
         </html>
     )
 }
