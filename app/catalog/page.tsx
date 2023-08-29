@@ -1,5 +1,5 @@
 import React from "react";
-import "./page.css"
+import "./catalog.css"
 import {getData, ProductProps} from "@/app/catalog/data";
 import ClickableDevice from "@/app/catalog/device";
 import {Metadata} from "next";
@@ -37,7 +37,7 @@ export default async function CatalogPage() {
 
                 <tbody>
                 <tr>
-                    <td><Product devices={devices}/></td>
+                    <td className={"deviceTableRow"}><Product devices={devices}/></td>
                 </tr>
                 </tbody>
             </table>
