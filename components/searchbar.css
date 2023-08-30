@@ -38,6 +38,14 @@
     padding-left: 8px;
 }
 
+.searchBar:hover {
+    background: #EDEDF0;
+}
+
+.searchBar:focus-within {
+    outline: 1px solid #006FFF;
+}
+
 .searchBar input {
     background: none;
     width: 260px;

@@ -90,8 +90,13 @@
     color: rgba(0, 0, 0, 0.45)
 }
 
-.deviceTableRow {
-    display: flex;
+.deviceTableRow tr:hover {
+    background: #F4F5F6;
+}
+
+.deviceTableRow:focus td:focus {
+    border-top: 1px solid #006FFF;
+    border-bottom: 1px solid #006FFF;
 }
 
 @media screen and (max-width: 650px) {

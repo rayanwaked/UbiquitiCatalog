@@ -18,6 +18,7 @@ export function Product({devices}: ProductProps) {
                 <ClickableDevice key={index} device={device}/>
             ))}
         </div>
+
     );
 }
 
@@ -39,8 +40,8 @@ export default async function CatalogPage() {
                     </thead>
 
                     <tbody>
-                    <tr>
-                        <td className={"deviceTableRow"}><Product devices={devices}/></td>
+                    <tr className={"deviceTableRow"}>
+                        <td tabIndex={0}><Product devices={devices}/></td>
                     </tr>
                     </tbody>
                 </table>
