@@ -25,7 +25,8 @@
     display: flex;
     flex-direction: column;
 
-    width: 444px;
+    max-width: 444px;
+    width: 50vw;
 }
 
 .productTable tr {
