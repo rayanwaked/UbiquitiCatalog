@@ -1,3 +1,5 @@
+'use client'
+
 import "./searchbar.css";
 import Image from "next/image";
 import React from "react";
@@ -5,13 +7,24 @@ import SearchIcon from "../public/searchicon.svg";
 import ListIcon from "../public/listicon.svg"
 import GridIcon from "../public/gridicon.svg"
 
+// interface SearchBarProps {
+//     onFilterChange: (query: string) => void;
+// }
+
 export default function SearchBar() {
+    function handleFilter() {
+
+    }
+
     return (
         <div className={"searchBarContainer"}>
             <div className={"searchBarAndCount"}>
                 <div className={"searchBar"}>
                     <Image className={"searchBarIcon"} src={SearchIcon} alt={"Icon"} width={14} height={14}/>
-                    <input placeholder={"Search"}/>
+                    <input
+                        placeholder={"Search"}
+                        onChange={handleFilter}
+                    />
                 </div>
                 <p className={"searchBarCount"}>123 Devices</p>
             </div>
