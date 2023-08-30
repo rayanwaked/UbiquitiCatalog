@@ -4,7 +4,7 @@ import React, {useEffect, useState} from "react";
 import Image from "next/image";
 import placeholder from "../../../public/placeholder.png";
 import GetDeviceName, {findDeviceByName} from "@/app/catalog/product/data";
-import {getData} from "@/app/catalog/data";
+import {getData} from "@/app/catalog/data/data";
 import "./product.css";
 import ProductBar from "@/components/productbar/productbar";
 

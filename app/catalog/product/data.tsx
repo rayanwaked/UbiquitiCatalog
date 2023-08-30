@@ -1,4 +1,4 @@
-import {ProductProps} from "@/app/catalog/data";
+import {ProductProps} from "@/app/catalog/data/data";
 import {useEffect, useState} from "react";
 
 // Get the device name from the URL

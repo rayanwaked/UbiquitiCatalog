@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from 'next/image';
-import {ProductProps} from "@/app/catalog/data";
+import {ProductProps} from "@/app/catalog/data/data";
 
 // Create an interface for the devices
 interface ClickableDeviceProps {

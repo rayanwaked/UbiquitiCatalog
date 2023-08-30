@@ -1,7 +1,7 @@
 import "./globals.css";
 import type {Metadata} from "next";
-import NavBar from "@/components/navbar/navbar";
 import React from "react";
+import NavBar from "@/components/navbar/navbar";
 
 export const metadata: Metadata = {
     title: "Ubiquiti Catalog",
@@ -20,9 +20,7 @@ export default function RootLayout({
             <link rel="apple-touch-icon" href="../public/logo_512.png"></link>
         </head>
         <body>
-        <div style={{position: "sticky", top: 0, zIndex: 100}}>
-            <NavBar/>
-        </div>
+        <NavBar/>
         {children}
         </body>
         </html>

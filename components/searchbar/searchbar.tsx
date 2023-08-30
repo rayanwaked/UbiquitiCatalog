@@ -2,14 +2,24 @@
 
 import "./searchbar.css";
 import Image from "next/image";
-import React from "react";
+import React, {useState} from "react";
 import SearchIcon from "../../public/searchicon.svg";
-import ListIcon from "../../public/listicon.svg"
-import GridIcon from "../../public/gridicon.svg"
+import ListIcon from "../../public/listicon.svg";
+import GridIcon from "../../public/gridicon.svg";
 
 export default function SearchBar() {
-    function handleFilter() {
+    const [isFilterVisible, setFilterVisible] = useState(false);
+    const [filters, setFilters] = useState({
+        // Initialize filter options here
+    });
 
+    function handleFilter() {
+        // Apply filters to your data here
+        // You can use the 'filters' state to access filter options
+    }
+
+    function togglePopup() {
+        setFilterVisible(!isFilterVisible);
     }
 
     return (
@@ -28,8 +38,13 @@ export default function SearchBar() {
             <div className={"searchBarControls"}>
                 <Image className={"searchBarIcon"} src={ListIcon} alt={"Icon"} width={14} height={14}/>
                 <Image className={"searchBarIcon"} src={GridIcon} alt={"Icon"} width={14} height={14}/>
-                <p>Filter</p>
+                <button onClick={togglePopup}>Filter</button>
             </div>
+            {isFilterVisible && (
+                <div className="filterPopup">
+                    <div></div>
+                </div>
+            )}
         </div>
     );
 }
