@@ -28,21 +28,23 @@ export default async function CatalogPage() {
     return (
         <div>
             <SearchBar/>
-            <table className={"catalogTable"}>
-                <thead>
-                <tr className={"catalogTableHeader"}>
-                    <th className={"catalogTableColumnOne"}></th>
-                    <th className={"catalogTableColumnTwo"}>Product Line</th>
-                    <th className={"catalogTableColumnThree catalogNameColor"}>Name</th>
-                </tr>
-                </thead>
+            <div className={"catalogTableContainer"}>
+                <table className={"catalogTable"}>
+                    <thead className="fixedHeader">
+                    <tr className={"catalogTableHeader"}>
+                        <th className={"catalogTableColumnOne"}></th>
+                        <th className={"catalogTableColumnTwo"}>Product Line</th>
+                        <th className={"catalogTableColumnThree catalogNameColor"}>Name</th>
+                    </tr>
+                    </thead>
 
-                <tbody>
-                <tr>
-                    <td className={"deviceTableRow"}><Product devices={devices}/></td>
-                </tr>
-                </tbody>
-            </table>
+                    <tbody>
+                    <tr>
+                        <td className={"deviceTableRow"}><Product devices={devices}/></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 }

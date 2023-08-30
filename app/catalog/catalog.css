@@ -1,12 +1,24 @@
-.catalogTable {
-    margin: 0 32px 0 32px;
+.catalogTableContainer {
+    max-height: 90vh;
+    overflow-y: auto;
+    position: sticky;
+}
 
+.fixedHeader {
+    position: sticky;
+    top: 0;
+    background: #FFFFFF;
+    z-index: 1;
+}
+
+.catalogTable {
     font-family: "UI Sans", sans-serif;
     font-weight: normal;
     font-size: 14px;
 }
 
 .catalogTable tr {
+    margin: 0 32px 0 32px;
     border-bottom: 1px solid rgb(237, 237, 240);
 }
 
@@ -22,7 +34,6 @@
     font-size: 14px;
 
     height: 32px;
-
     width: calc(100vw - 20px - 16px - 32px);
 }
 
@@ -45,7 +56,7 @@
 
     min-height: 32px;
 
-    color: rgba(0, 0, 0, 0.65)
+    color: rgba(0, 0, 0, 0.65);
 }
 
 .catalogTableColumnOne {
@@ -84,11 +95,19 @@
 }
 
 @media screen and (max-width: 650px) {
+    .catalogTableContainer {
+        max-height: 90vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        position: relative;
+    }
+    
     .catalogTable {
         margin: 32px 32px 0 32px;
 
         font-family: "UI Sans", sans-serif;
         font-weight: normal;
         font-size: 14px;
+
     }
 }
