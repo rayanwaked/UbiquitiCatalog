@@ -6,9 +6,14 @@ import {getData} from "@/app/catalog/data/data";
 import ClickableDevice from "@/app/catalog/list/device";
 import {useVisibleRowsCount} from "@/components/searchbar/rowcount";
 
+
 export default function ListComponent() {
     const [devices, setDevices] = useState([]);
-    const visibleRowsCount = useVisibleRowsCount(devices);
+    const [searchPhrase, setSearchPhrase] = useState('');
+
+    // const filteredDevices = devices.filter(device =>
+    //     device.product?.name.toLowerCase().includes(searchPhrase.toLowerCase())
+    // );
 
     useEffect(() => {
         const fetchData = async () => {

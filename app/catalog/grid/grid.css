@@ -28,6 +28,10 @@
     outline: 1px solid #006FFF;
 }
 
+.gridProduct:active {
+    outline: 1px solid #006FFF;
+}
+
 .gridProductRowLabel {
     display: flex;
     justify-content: flex-end;

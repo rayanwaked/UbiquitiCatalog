@@ -8,7 +8,6 @@ import {useVisibleRowsCount} from "@/components/searchbar/rowcount";
 
 export default function GridComponent() {
     const [devices, setDevices] = useState([]);
-    const visibleRowsCount = useVisibleRowsCount(devices);
 
     useEffect(() => {
         const fetchData = async () => {
