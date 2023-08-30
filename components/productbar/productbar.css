@@ -5,7 +5,7 @@
     position: sticky;
     top: 48px;
     z-index: 102;
-    
+
     height: 64px;
     padding: 0 32px 0 32px;
 
@@ -15,6 +15,17 @@
     font-family: "ui-sans-serif", sans-serif;
     font-weight: normal;
     font-size: 14px;
+}
+
+.productBarControls {
+    display: flex;
+    flex-direction: row;
+
+    gap: 4px;
+}
+
+.productBarIconRotate {
+    transform: rotate(180deg);
 }
 
 .spacer {

@@ -1,0 +1,11 @@
+.buttonContainer button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px;
+    gap: 4px;
+
+    border-radius: 4px;
+    background: white;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.08), 0 0 1px 0 rgba(0, 0, 0, 0.06);
+}
