@@ -3,13 +3,9 @@
 import "./searchbar.css";
 import Image from "next/image";
 import React from "react";
-import SearchIcon from "../public/searchicon.svg";
-import ListIcon from "../public/listicon.svg"
-import GridIcon from "../public/gridicon.svg"
-
-// interface SearchBarProps {
-//     onFilterChange: (query: string) => void;
-// }
+import SearchIcon from "../../public/searchicon.svg";
+import ListIcon from "../../public/listicon.svg"
+import GridIcon from "../../public/gridicon.svg"
 
 export default function SearchBar() {
     function handleFilter() {

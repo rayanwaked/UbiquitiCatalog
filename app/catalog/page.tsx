@@ -3,7 +3,7 @@ import "./catalog.css";
 import {getData, ProductProps} from "@/app/catalog/data";
 import ClickableDevice from "@/app/catalog/device";
 import {Metadata} from "next";
-import SearchBar from "@/components/searchbar";
+import SearchBar from "@/components/searchbar/searchbar";
 
 export const metadata: Metadata = {
     title: "Ubiquiti Catalog",

@@ -6,6 +6,7 @@ import placeholder from "../../../public/placeholder.png";
 import GetDeviceName, {findDeviceByName} from "@/app/catalog/product/data";
 import {getData} from "@/app/catalog/data";
 import "./product.css";
+import ProductBar from "@/components/productbar/productbar";
 
 export default function ProductPage() {
     const [productInfo, setProductInfo] = useState({
@@ -56,51 +57,54 @@ export default function ProductPage() {
     }, [deviceName, setProductInfo]);
 
     return (
-        <div className="productGrid">
-            <Image
-                className={"productImage"}
-                src={productInfo.deviceImageId || placeholder}
-                alt={"Product Image"}
-                width={257}
-                height={257}
-            />
-            <div>
-                <div className={"productLabels"}>
-                    <p className={"productHeader"}>{productInfo.deviceName}</p>
-                    <p className={"productSubheader"}>{productInfo.deviceLine}</p>
+        <div>
+            <ProductBar/>
+            <div className="productGrid">
+                <Image
+                    className={"productImage"}
+                    src={productInfo.deviceImageId || placeholder}
+                    alt={"Product Image"}
+                    width={257}
+                    height={257}
+                />
+                <div>
+                    <div className={"productLabels"}>
+                        <p className={"productHeader"}>{productInfo.deviceName}</p>
+                        <p className={"productSubheader"}>{productInfo.deviceLine}</p>
+                    </div>
+                    <table className={"productTable"}>
+                        <tbody>
+                        <tr>
+                            <td>Product Line</td>
+                            <td className={"productData"}>{productInfo.deviceLine}</td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td className={"productData"}>{productInfo.deviceId}</td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td className={"productData"}>{productInfo.deviceName}</td>
+                        </tr>
+                        <tr>
+                            <td>Short Name</td>
+                            <td className={"productData"}>{productInfo.deviceShortName}</td>
+                        </tr>
+                        <tr>
+                            <td>Max. Power</td>
+                            <td className={"productData"}>{productInfo.deviceMaxPower}</td>
+                        </tr>
+                        <tr>
+                            <td>Speed</td>
+                            <td className={"productData"}>{productInfo.deviceSpeed}</td>
+                        </tr>
+                        <tr>
+                            <td>Number of Ports</td>
+                            <td className={"productData"}>{productInfo.deviceNumberOfPorts}</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <table className={"productTable"}>
-                    <tbody>
-                    <tr>
-                        <td>Product Line</td>
-                        <td className={"productData"}>{productInfo.deviceLine}</td>
-                    </tr>
-                    <tr>
-                        <td>ID</td>
-                        <td className={"productData"}>{productInfo.deviceId}</td>
-                    </tr>
-                    <tr>
-                        <td>Name</td>
-                        <td className={"productData"}>{productInfo.deviceName}</td>
-                    </tr>
-                    <tr>
-                        <td>Short Name</td>
-                        <td className={"productData"}>{productInfo.deviceShortName}</td>
-                    </tr>
-                    <tr>
-                        <td>Max. Power</td>
-                        <td className={"productData"}>{productInfo.deviceMaxPower}</td>
-                    </tr>
-                    <tr>
-                        <td>Speed</td>
-                        <td className={"productData"}>{productInfo.deviceSpeed}</td>
-                    </tr>
-                    <tr>
-                        <td>Number of Ports</td>
-                        <td className={"productData"}>{productInfo.deviceNumberOfPorts}</td>
-                    </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     );
