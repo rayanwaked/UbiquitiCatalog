@@ -1,42 +1,48 @@
 'use client'
 
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./list.css";
-import {getData, ProductProps} from "@/app/catalog/data/data";
+import {getData} from "@/app/catalog/data/data";
 import ClickableDevice from "@/app/catalog/list/device";
 
-// Iterate through the data using ProductProps and display the data
-export function Product({devices}: ProductProps) {
-    return (
-        <div className={"productLine"}>
-            {devices.map((device, index) => (
-                <ClickableDevice key={index} device={device}/>
-            ))}
-        </div>
+export default function ListComponent() {
+    const [devices, setDevices] = useState([]);
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const {devices} = await getData();
+                setDevices(devices);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
 
-    );
-}
-
-// Present the data to the user
-export default async function ListComponent() {
-    const {devices} = await getData(); // Access the devices array
+        fetchData().then();
+    }, []);
 
     return (
         <div>
-            <div className={"catalogTableContainer"}>
-                <table className={"catalogTable"}>
-                    <thead className="fixedHeader">
-                    <tr className={"catalogTableHeader"}>
-                        <th className={"catalogTableColumnOne"}></th>
-                        <th className={"catalogTableColumnTwo"}>Product Line</th>
-                        <th className={"catalogTableColumnThree catalogNameColor"}>Name</th>
+            <div className={"listTableContainer"}>
+                <table className={"listTable"}>
+                    <thead className="fixedTableHeader">
+                    <tr className={"listTableHeader"}>
+                        <th className={"listTableColumnOne"}></th>
+                        <th className={"listTableColumnTwo"}>Product Line</th>
+                        <th className={"listTableColumnThree listNameColor"}>
+                            Name
+                        </th>
                     </tr>
                     </thead>
 
                     <tbody>
-                    <tr className={"deviceTableRow"}>
-                        <td tabIndex={0}><Product devices={devices}/></td>
-                    </tr>
+                    {devices.map((device, index) => (
+                        <tr key={index}>
+                            <td tabIndex={0}>
+                                <ClickableDevice device={device}/>
+                            </td>
+                        </tr>
+                    ))}
                     </tbody>
                 </table>
             </div>

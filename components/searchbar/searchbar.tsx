@@ -32,19 +32,20 @@ export default function SearchBar() {
                         onChange={handleFilter}
                     />
                 </div>
-                <p className={"searchBarCount"}>123 Devices</p>
+                <p className={"searchBarCount"}>{}</p>
             </div>
+
             <div className={"spacer"}/>
-            <div className={"searchBarControls"}>
-                <Image className={"searchBarIcon"} src={ListIcon} alt={"Icon"} width={14} height={14}/>
-                <Image className={"searchBarIcon"} src={GridIcon} alt={"Icon"} width={14} height={14}/>
-                <button onClick={togglePopup}>Filter</button>
-            </div>
-            {isFilterVisible && (
-                <div className="filterPopup">
-                    <div></div>
+
+            <div className={"searchBarControlsAndFilter"}>
+                <div className={"searchBarControls"}>
+                    <Image className={"searchBarIcon"} src={ListIcon} alt={"Icon"} width={14} height={14}/>
+                    <Image className={"searchBarIcon"} src={GridIcon} alt={"Icon"} width={14} height={14}/>
+                    <button onClick={togglePopup}>Filter</button>
                 </div>
-            )}
+                {isFilterVisible && (
+                    <div className="searchBarFilterPopup"></div>)}
+            </div>
         </div>
     );
 }

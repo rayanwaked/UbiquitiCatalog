@@ -1,0 +1,109 @@
+.listTable {
+    font-size: 14px;
+}
+
+.listTable tr {
+    margin: 0 32px 0 32px;
+}
+
+.fixedTableHeader {
+    position: sticky;
+}
+
+.listTableHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: sticky;
+
+    font-family: "UI Sans Bold", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+
+    height: 32px;
+    width: calc(100vw - 20px - 16px - 32px);
+
+    background: #FFFFFF;
+    border-bottom: 1px solid rgb(237, 237, 240);
+}
+
+.listNameColor {
+    color: rgb(0, 0, 0) !important;
+}
+
+.listTableBody {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.listTableRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-right: 32px;
+    border-bottom: 1px solid rgb(237, 237, 240);
+
+    min-height: 32px;
+
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.listTableColumnOne {
+    display: flex;
+    align-content: flex-start;
+
+    width: 20px;
+    height: 20px;
+
+    margin: 0 8px 0 8px;
+}
+
+.listTableColumnTwo {
+    display: flex;
+    align-content: flex-start;
+
+    width: calc(50vw - 20px - 16px - 32px);
+
+    margin: 0 8px 0 8px;
+}
+
+.listTableColumnThree {
+    display: flex;
+    align-content: flex-start;
+
+    width: calc(50vw - 20px - 16px - 32px);
+
+    margin: 0 8px 0 8px;
+    padding-right: 15vw;
+
+    color: rgba(0, 0, 0, 0.45)
+}
+
+.deviceTableRow tr:hover {
+    background: #F4F5F6;
+}
+
+.deviceTableRow:focus td:focus {
+    border-top: 1px solid #006FFF;
+    border-bottom: 1px solid #006FFF;
+}
+
+@media screen and (max-width: 650px) {
+    .listTableContainer {
+        max-height: 90vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    .listTable {
+        margin: 32px 0 0 0;
+
+        font-family: "UI Sans", sans-serif;
+        font-weight: normal;
+        font-size: 14px;
+
+    }
+}

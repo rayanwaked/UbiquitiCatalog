@@ -1,20 +1,19 @@
-import React from "react";
-import "./catalog.css";
-import {Metadata} from "next";
+'use client'
+
+import React, {useState} from "react";
 import SearchBar from "@/components/searchbar/searchbar";
 import ListComponent from "@/app/catalog/list/list";
-
-export const metadata: Metadata = {
-    title: "Ubiquiti Catalog",
-    description: "Browse and learn about Ubiquiti's products",
-}
+import GridComponent from "@/app/catalog/grid/grid";
 
 // Present the data to the user
-export default async function CatalogPage() {
+export default function CatalogPage() {
+    const [viewMode, setViewMode] = useState<"list" | "grid">("list"); // Default to "list"
+
     return (
         <div>
             <SearchBar/>
-            <ListComponent/>
+            {viewMode === "list" && <ListComponent/>}
+            {viewMode === "grid" && <GridComponent/>}
         </div>
     );
 }

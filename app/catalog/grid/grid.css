@@ -1,0 +1,95 @@
+.gridCatalogTable tbody {
+    width: 100vw;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16.66vw, 1fr));
+
+    overflow-x: hidden;
+}
+
+.gridProduct {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+
+    border: 1px solid #EDEDF0;
+    border-radius: 8px;
+
+    margin: 16px 32px 16px 32px;
+}
+
+.gridProductRowLabel {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    color: #006FFF;
+
+    margin: 3px 3px 0 0;
+}
+
+.gridProductRowLabelBackground {
+    border-radius: 4px;
+    background: #FFFFFF;
+
+    padding: 2px 4px 2px 4px;
+}
+
+.gridProductRowTwo {
+    width: 100%;
+    background: #F9FAFA;
+}
+
+.gridProductRowTwoImage {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.gridProductRowThree {
+    margin: 8px 8px 0 8px;
+}
+
+.gridProductRowFour {
+    margin: 18px 8px 8px 8px;
+
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+@media screen and (max-width: 1800px) {
+    .gridCatalogTable tbody {
+        width: 100vw;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .gridCatalogTable tbody {
+        width: 100vw;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(33.3vw, 1fr));
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .gridCatalogTable tbody {
+        width: 100vw;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(50vw, 1fr));
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .gridCatalogTable tbody {
+        width: 100vw;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100vw, 1fr));
+    }
+}

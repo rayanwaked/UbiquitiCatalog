@@ -21,14 +21,14 @@ const ClickableDevice: React.FC<ClickableDeviceProps> = ({device}) => {
     return (
         <Link href={`/catalog/product?deviceName=${encodeURIComponent(device.product?.name || "")}`} passHref>
             <table>
-                <tbody className={"catalogTableBody"}>
-                <tr className={"catalogTableRow"}>
-                    <td className={"catalogTableColumnOne"}><Image
+                <tbody className={"listTableBody"}>
+                <tr className={"listTableRow"}>
+                    <td className={"listTableColumnOne"}><Image
                         src={"https://static.ui.com/fingerprint/ui/icons/" + device.icon?.id + "_257x257.png"}
                         alt={"Product" +
                             " Icon"} width={20} height={20}/></td>
-                    <td className={"catalogTableColumnTwo"}>{device.line?.name}</td>
-                    <td className={"catalogTableColumnThree"}>{device.product?.name}</td>
+                    <td className={"listTableColumnTwo"}>{device.line?.name}</td>
+                    <td className={"listTableColumnThree"}>{device.product?.name}</td>
                 </tr>
                 </tbody>
             </table>

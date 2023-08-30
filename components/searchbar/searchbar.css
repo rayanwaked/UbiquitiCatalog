@@ -3,7 +3,7 @@
     align-items: center;
 
     position: sticky;
-    top: 48px;
+    top: 42px;
     z-index: 102;
 
     height: 64px;
@@ -67,14 +67,45 @@
     margin: 0 6px 0 6px;
 }
 
+.searchBarControlsAndFilter {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
 .searchBarControls {
     display: flex;
     flex-direction: row;
     gap: 18px;
+    position: relative;
+}
+
+.searchBarControls button {
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.searchBarControls button:hover {
+    background: #F4F5F6;
+}
+
+.searchBarControls button:focus {
+    outline: 1px solid #006FFF;
 }
 
 .spacer {
     flex-grow: 1;
+}
+
+.searchBarFilterPopup {
+    width: 134px;
+    height: 264px;
+    background: #FFFFFF;
+    box-shadow: 0 16px 32px 0 rgba(28, 30, 45, 0.20);
+    border-radius: 8px;
+
+    position: absolute;
+    margin-top: 34px;
 }
 
 @media screen and (max-width: 650px) {
@@ -88,6 +119,7 @@
 
         height: 64px;
         padding: 12px 32px 24px 32px;
+        margin-bottom: 12px;
 
         color: rgb(128, 136, 147);
 

@@ -27,6 +27,7 @@ export default function ProductPage() {
             try {
                 const devicesData = await getData();
                 const foundDevice = findDeviceByName(deviceName, devicesData.devices);
+                document.title = deviceName
 
                 if (foundDevice) {
                     const deviceShortName = foundDevice.shortnames || "n/a";
