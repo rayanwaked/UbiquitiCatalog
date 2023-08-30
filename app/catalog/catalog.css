@@ -101,9 +101,9 @@
         overflow-x: hidden;
         position: relative;
     }
-    
+
     .catalogTable {
-        margin: 32px 32px 0 32px;
+        margin: 32px 0 0 0;
 
         font-family: "UI Sans", sans-serif;
         font-weight: normal;
