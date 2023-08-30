@@ -4,10 +4,12 @@ import React, {useEffect, useState} from "react";
 import "./list.css";
 import {getData} from "@/app/catalog/data/data";
 import ClickableDevice from "@/app/catalog/list/device";
+import {useVisibleRowsCount} from "@/components/searchbar/rowcount";
 
 export default function ListComponent() {
     const [devices, setDevices] = useState([]);
-    
+    const visibleRowsCount = useVisibleRowsCount(devices);
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -49,3 +51,24 @@ export default function ListComponent() {
         </div>
     );
 }
+
+// Export visibleRowsCount separately
+export const ListVisibleRowsCountWrapper = () => {
+    const [devices, setDevices] = useState([]);
+    const visibleRowsCount = useVisibleRowsCount(devices);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const {devices} = await getData();
+                setDevices(devices);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchData().then();
+    }, []);
+
+    return visibleRowsCount;
+};

@@ -4,14 +4,18 @@ import "./productbar.css";
 import React from "react";
 import Button from "@/components/button/button";
 import ArrowIcon from "../../public/arrow"
-import Link from "next/link";
+import {useRouter} from "next/navigation";
 
 export default function ProductBar() {
+    const router = useRouter();
+
+    const goBackToPreviousPage = () => {
+        router.back();
+    };
+
     return (
         <div className={"productBarContainer"}>
-            <Link href={`/catalog`} passHref>
-                <Button buttonIcon={ArrowIcon} buttonText={"Back"}/>
-            </Link>
+            <Button onClick={goBackToPreviousPage} buttonIcon={ArrowIcon} buttonText={"Back"}/>
             <div className={"spacer"}/>
             <div className={"productBarControls"}>
                 <Button buttonIcon={ArrowIcon}/>

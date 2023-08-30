@@ -7,6 +7,8 @@ import GridComponent from "@/app/catalog/grid/grid";
 
 // Present the data to the user
 export default function CatalogPage() {
+    document.title = "Ubiquiti Catalog"
+    
     const [viewMode, setViewMode] = useState<"list" | "grid">("list");
 
     return (

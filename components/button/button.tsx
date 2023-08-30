@@ -4,6 +4,7 @@ import "./button.css";
 import React from "react";
 
 interface ButtonProps {
+    onClick?: () => void;
     buttonText?: string;
     buttonIcon?: React.ReactElement;
 }
@@ -11,7 +12,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = (props) => {
     return (
         <div className="buttonContainer">
-            <button>
+            <button onClick={props.onClick}>
                 {props.buttonIcon}
                 {props.buttonText}
             </button>

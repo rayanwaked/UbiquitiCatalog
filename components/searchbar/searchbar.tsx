@@ -8,12 +8,17 @@ import ListIcon from "../../public/listicon.svg";
 import ListIconActive from "../../public/listiconactive.svg"
 import GridIcon from "../../public/gridicon.svg";
 import GridIconActive from "../../public/gridiconactive.svg"
+import {GridVisibleRowsCountWrapper} from "@/app/catalog/grid/grid";
+import {ListVisibleRowsCountWrapper} from "@/app/catalog/list/list";
 
 export type ViewModeChangeHandler = (mode: "list" | "grid") => void;
 
 export default function SearchBar({onViewModeChange}: { onViewModeChange: ViewModeChangeHandler }) {
     const [viewMode, setViewMode] = useState<"list" | "grid">("list");
     const [isFilterVisible, setFilterVisible] = useState(false);
+    const visibleGridRowsCount = GridVisibleRowsCountWrapper();
+    const visibleListRowsCount = ListVisibleRowsCountWrapper();
+
 
     function handleFilter() {
         // Apply filters to your data here
@@ -38,7 +43,7 @@ export default function SearchBar({onViewModeChange}: { onViewModeChange: ViewMo
                         onChange={handleFilter}
                     />
                 </div>
-                <p className={"searchBarCount"}>{}</p>
+                <p className={"searchBarCount"}>{viewMode === "list" ? visibleListRowsCount : visibleGridRowsCount}</p>
             </div>
 
             <div className={"spacer"}/>

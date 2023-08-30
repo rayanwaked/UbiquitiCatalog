@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 :root {
-    background-color: rgba(246, 246, 248, 0.27);
     --ubiquiti-primary: #006FFF;
     --ubiquiti-primary-hover: #0059CC;
 }
