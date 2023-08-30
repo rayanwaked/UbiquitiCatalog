@@ -7,11 +7,11 @@ import GridComponent from "@/app/catalog/grid/grid";
 
 // Present the data to the user
 export default function CatalogPage() {
-    const [viewMode, setViewMode] = useState<"list" | "grid">("list"); // Default to "list"
+    const [viewMode, setViewMode] = useState<"list" | "grid">("list");
 
     return (
         <div>
-            <SearchBar/>
+            <SearchBar onViewModeChange={setViewMode}/>
             {viewMode === "list" && <ListComponent/>}
             {viewMode === "grid" && <GridComponent/>}
         </div>
