@@ -16,8 +16,6 @@
     align-items: center;
 
     position: sticky;
-    top: 64px;
-    z-index: 1;
 
     font-family: "UI Sans Bold", sans-serif;
     font-weight: bold;
@@ -83,4 +81,14 @@
 
 .deviceTableRow {
     display: flex;
+}
+
+@media screen and (max-width: 650px) {
+    .catalogTable {
+        margin: 32px 32px 0 32px;
+
+        font-family: "UI Sans", sans-serif;
+        font-weight: normal;
+        font-size: 14px;
+    }
 }
