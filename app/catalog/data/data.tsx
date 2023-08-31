@@ -16,7 +16,6 @@ export async function getData() {
 
 // Create a property type interface
 export interface ProductProps {
-    product: any;
     devices: Array<{
         sysids?: Array<string>;
         unifi?: {

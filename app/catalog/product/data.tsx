@@ -34,9 +34,6 @@ export function findDeviceByName(
     const nextDevice = deviceIndex < devices.length - 1 ? devices[deviceIndex + 1].product?.name : null;
     const foundDevice = devices[deviceIndex];
 
-    console.log(previousDevice)
-    console.log(nextDevice)
-
     return {
         previousDevice,
         foundDevice,

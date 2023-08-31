@@ -10,6 +10,7 @@ import GridIcon from "../../public/gridicon.svg";
 import GridIconActive from "../../public/gridiconactive.svg"
 import {GridVisibleRowsCountWrapper} from "@/app/catalog/grid/grid";
 import {ListVisibleRowsCountWrapper} from "@/app/catalog/list/list";
+import CustomCheckbox from "@/components/checkbox/checkbox";
 
 export type ViewModeChangeHandler = (mode: "list" | "grid") => void;
 
@@ -67,7 +68,36 @@ export default function SearchBar({onViewModeChange}: {
                     <button onClick={togglePopup}>Filter</button>
                 </div>
                 {isFilterVisible && (
-                    <div className="searchBarFilterPopup"></div>
+                    <div className="searchBarFilterPopup">
+                        <div className={"filterHeader"}>
+                            <p>Product Line</p>
+                        </div>
+                        <div className={"filterTypeContainer"}>
+                            <CustomCheckbox/>
+                            <p>UniFi</p>
+                        </div>
+                        <div className={"filterTypeContainer"}>
+                            <CustomCheckbox/>
+                            <p>UniFi LTE</p>
+                        </div>
+                        <div className={"filterTypeContainer"}>
+                            <CustomCheckbox/>
+                            <p>UniFi Protect</p>
+                        </div>
+                        <div className={"filterTypeContainer"}>
+                            <CustomCheckbox/>
+                            <p>UniFi Access</p>
+                        </div>
+                        <div className={"filterTypeContainer"}>
+                            <CustomCheckbox/>
+                            <p>airMax</p>
+                        </div>
+                        <div className={"filterTypeContainer"}>
+                            <CustomCheckbox/>
+                            <p>EdgeMax</p>
+                        </div>
+                        <p className={"filterReset"}>Reset</p>
+                    </div>
                 )}
             </div>
         </div>
