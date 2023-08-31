@@ -139,19 +139,44 @@
 
         background: #FFFFFF;
     }
+}
 
-    .searchBarFilterPopup {
-        width: 134px;
-        height: 264px;
-        background: #FFFFFF;
-        box-shadow: 0 16px 32px 0 rgba(28, 30, 45, 0.20);
-        border-radius: 8px;
+.react-autosuggest__container {
+    position: relative;
+}
 
-        position: absolute;
-        padding-left: 16px;
+.react-autosuggest__input:focus {
+    outline: none;
+}
 
-        gap: 8px;
+.react-autosuggest__container--open .react-autosuggest__input {
 
-        right: 10px;
-    }
+}
+
+.react-autosuggest__suggestions-container--open {
+    overflow-y: scroll;
+    position: absolute;
+    top: 28px;
+    width: 320px;
+    height: 122px;
+    margin-left: -32px;
+    padding: 0;
+    list-style-type: none;
+    background-color: #fff;
+    line-height: 10px;
+    font-weight: 300;
+    font-size: 14px;
+    z-index: 2;
+    box-shadow: 0px 16px 32px 0px rgba(28, 30, 45, 0.20);
+    border-radius: 8px;
+    color: #50565E;
+}
+
+.react-autosuggest__suggestion {
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+.react-autosuggest__suggestion--focused {
+    background-color: #ddd;
 }

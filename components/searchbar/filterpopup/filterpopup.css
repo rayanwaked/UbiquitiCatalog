@@ -1,5 +1,6 @@
-
 .searchBarFilterPopup {
+    margin-left: 20px;
+
     width: 134px;
     height: 264px;
     background: #FFFFFF;
@@ -37,4 +38,23 @@
     padding-top: 8px;
     margin-left: -6px;
     color: #F03A3E;
+}
+
+@media screen and (max-width: 650px) {
+    .searchBarFilterPopup {
+        margin-right: 32vw;
+
+        width: 134px;
+        height: 264px;
+        background: #FFFFFF;
+        box-shadow: 0 16px 32px 0 rgba(28, 30, 45, 0.20);
+        border-radius: 8px;
+
+        position: absolute;
+        padding-left: 16px;
+
+        gap: 8px;
+
+        right: 10px;
+    }
 }
