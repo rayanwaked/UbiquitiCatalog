@@ -18,6 +18,8 @@
     border-radius: 8px;
 
     margin: 16px 32px 16px 32px;
+
+    tab-index: 1;
 }
 
 .gridProduct:hover {

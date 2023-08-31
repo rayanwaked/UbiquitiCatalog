@@ -23,7 +23,7 @@ const ClickableDevice: React.FC<ClickableDeviceProps> = ({device}) => {
         <Link href={`/catalog/product?deviceName=${encodeURIComponent(device.product?.name || "")}`} passHref>
             <table className={"gridTable"}>
                 <tbody className={"gridContainer"}>
-                <tr className={"gridProduct"}>
+                <tr className={"gridProduct"} tabIndex={0}>
                     <td className={"gridProductRowTwo"}>
                         <div className={"gridProductRowLabel"}>
                             <div className={"gridProductRowLabelBackground"}>{device.line?.name}</div>

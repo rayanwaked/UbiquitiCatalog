@@ -36,7 +36,7 @@ export default function GridComponent({searchInput, filters}: {
                 <tbody>
                 {devices.map((device, index) => (
                     <tr key={index}>
-                        <td tabIndex={0}>
+                        <td>
                             <ClickableDevice device={device}/>
                         </td>
                     </tr>
