@@ -20,6 +20,8 @@ export default function ProductPage() {
         deviceSpeed: "",
     });
 
+    const [showJsonData, setShowJsonData] = useState(false);
+
     const deviceName = GetDeviceName();
 
     useEffect(() => {
@@ -105,6 +107,14 @@ export default function ProductPage() {
                         </tr>
                         </tbody>
                     </table>
+                    <button onClick={() => setShowJsonData(!showJsonData)}
+                            className={"productJsonToggle"}>See All Details as JSON
+                    </button>
+                    {showJsonData && (
+                        <pre className="productJsonContainer">
+                            {JSON.stringify(productInfo, null, 2)}
+                        </pre>
+                    )}
                 </div>
             </div>
         </div>

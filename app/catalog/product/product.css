@@ -38,7 +38,6 @@
     min-height: 32px;
 
     color: rgba(0, 0, 0, 0.85);
-    border-bottom: 1px solid rgb(237, 237, 240);
 }
 
 .productData {
@@ -48,6 +47,30 @@
 .productImage {
     background: #F9FAFA;
     border-radius: 8px;
+}
+
+.productJsonToggle {
+    color: #006FFF;
+    margin-top: 16px;
+    padding: 6px 2px 6px 2px;
+    border: 1px solid white;
+}
+
+.productJsonToggle:hover {
+    color: #0059CC;
+    border: 1px solid #006FFF;
+    border-radius: 4px;
+}
+
+.productJsonToggle:focus {
+    color: #006FFF;
+    margin-top: 16px;
+}
+
+.productJsonContainer {
+    overflow-x: scroll;
+    max-width: 444px;
+    position: absolute;
 }
 
 @media screen and (max-width: 650px) {

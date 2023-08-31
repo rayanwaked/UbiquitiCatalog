@@ -1,5 +1,3 @@
-'use client'
-
 import "./searchbar.css";
 import Image from "next/image";
 import React, {useState} from "react";
@@ -13,7 +11,6 @@ import {GridVisibleRowsCountWrapper} from "@/app/catalog/grid/grid";
 import {ListVisibleRowsCountWrapper} from "@/app/catalog/list/list";
 import FilterPopup from "@/components/searchbar/filterpopup/filterpopup";
 import {getData, ProductProps} from "@/app/catalog/data/data";
-
 
 export type ViewModeChangeHandler = (mode: "list" | "grid") => void;
 
@@ -32,10 +29,6 @@ export default function SearchBar({onViewModeChange, setSearchInput, onFilterCha
 
     function togglePopup() {
         setFilterVisible(!isFilterVisible);
-    }
-
-    function handleFilterChange(selectedFilters: string[]) {
-        onFilterChange(selectedFilters);
     }
 
     function handleViewModeChange(mode: "list" | "grid") {
@@ -61,7 +54,7 @@ export default function SearchBar({onViewModeChange, setSearchInput, onFilterCha
     function handleSearchInputChange(value: string) {
         setSearchInputLocal(value);
         setSearchInput(value);
-        fetchSuggestions(value);
+        fetchSuggestions(value).then();
         setShowSuggestions(true);
     }
 
@@ -80,10 +73,10 @@ export default function SearchBar({onViewModeChange, setSearchInput, onFilterCha
                         inputProps={{
                             placeholder: "Search",
                             value: searchInput,
-                            onChange: (event, {newValue}) => handleSearchInputChange(newValue),
+                            onChange: (_event, {newValue}) => handleSearchInputChange(newValue),
                             autoCorrect: "off"
                         }}
-                        onSuggestionSelected={(event, {suggestionValue}) => {
+                        onSuggestionSelected={(_event, {suggestionValue}) => {
                             handleSearchInputChange(suggestionValue);
                             setShowSuggestions(false);
                         }}
