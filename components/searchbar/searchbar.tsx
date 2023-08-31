@@ -21,9 +21,10 @@ export default function SearchBar({onViewModeChange, setSearchInput, onFilterCha
 }) {
     const [viewMode, setViewMode] = useState<"list" | "grid">("list");
     const [searchInput, setSearchInputLocal] = useState("");
+    const [filters, setFilters] = useState<string[]>([]);
     const [isFilterVisible, setFilterVisible] = useState(false);
-    const visibleGridRowsCount = GridVisibleRowsCountWrapper({searchInput});
-    const visibleListRowsCount = ListVisibleRowsCountWrapper({searchInput});
+    const visibleGridRowsCount = GridVisibleRowsCountWrapper({searchInput, filters});
+    const visibleListRowsCount = ListVisibleRowsCountWrapper({searchInput, filters});
     const [suggestions, setSuggestions] = useState<string[]>([]);
     const [showSuggestions, setShowSuggestions] = useState(false);
 
