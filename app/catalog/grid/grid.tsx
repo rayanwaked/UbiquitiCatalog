@@ -48,9 +48,9 @@ export default function GridComponent({searchInput, filters}: {
 }
 
 // Export visibleRowsCount separately
-export const GridVisibleRowsCountWrapper = ({searchInput}: { searchInput: string }) => {
+export const GridVisibleRowsCountWrapper = ({searchInput, filters}: { searchInput: string, filters: string[] }) => {
     const [devices, setDevices] = useState([]);
-    const visibleRowsCount = useVisibleRowsCount(devices, searchInput);
+    const visibleRowsCount = useVisibleRowsCount(devices, searchInput, filters);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -62,8 +62,8 @@ export const GridVisibleRowsCountWrapper = ({searchInput}: { searchInput: string
             }
         };
 
-        fetchData().then();
-    }, [searchInput]);
+        fetchData();
+    }, [searchInput, filters]);
 
     return visibleRowsCount;
 };

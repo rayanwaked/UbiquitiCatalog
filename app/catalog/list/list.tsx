@@ -59,9 +59,9 @@ export default function ListComponent({searchInput, filters}: {
 }
 
 // Export visibleRowsCount separately
-export const ListVisibleRowsCountWrapper = ({searchInput}: { searchInput: string }) => {
+export const ListVisibleRowsCountWrapper = ({searchInput, filters}: { searchInput: string, filters: string[] }) => {
     const [devices, setDevices] = useState([]);
-    const visibleRowsCount = useVisibleRowsCount(devices, searchInput);
+    const visibleRowsCount = useVisibleRowsCount(devices, searchInput, filters);
 
     useEffect(() => {
         const fetchData = async () => {
