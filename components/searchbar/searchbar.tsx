@@ -17,9 +17,10 @@ import {getData, ProductProps} from "@/app/catalog/data/data";
 
 export type ViewModeChangeHandler = (mode: "list" | "grid") => void;
 
-export default function SearchBar({onViewModeChange, setSearchInput}: {
+export default function SearchBar({onViewModeChange, setSearchInput, onFilterChange}: {
     onViewModeChange: ViewModeChangeHandler,
-    setSearchInput: React.Dispatch<React.SetStateAction<string>>
+    setSearchInput: React.Dispatch<React.SetStateAction<string>>,
+    onFilterChange: (selectedFilters: string[]) => void
 }) {
     const [viewMode, setViewMode] = useState<"list" | "grid">("list");
     const [searchInput, setSearchInputLocal] = useState("");
@@ -31,6 +32,10 @@ export default function SearchBar({onViewModeChange, setSearchInput}: {
 
     function togglePopup() {
         setFilterVisible(!isFilterVisible);
+    }
+
+    function handleFilterChange(selectedFilters: string[]) {
+        onFilterChange(selectedFilters);
     }
 
     function handleViewModeChange(mode: "list" | "grid") {
@@ -52,7 +57,6 @@ export default function SearchBar({onViewModeChange, setSearchInput}: {
 
         setSuggestions(newSuggestions);
     }
-
 
     function handleSearchInputChange(value: string) {
         setSearchInputLocal(value);
@@ -103,7 +107,7 @@ export default function SearchBar({onViewModeChange, setSearchInput}: {
                                width={14} height={14}/>
                     </button>
                     <button onClick={togglePopup}>Filter</button>
-                    {isFilterVisible && <FilterPopup/>}
+                    {isFilterVisible && <FilterPopup onFilterChange={onFilterChange}/>}
                 </div>
             </div>
         </div>

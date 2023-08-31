@@ -6,7 +6,10 @@ import {getData, ProductProps} from "@/app/catalog/data/data";
 import ClickableDevice from "@/app/catalog/grid/device";
 import {useVisibleRowsCount} from "@/components/searchbar/data/rowcount";
 
-export default function GridComponent({searchInput}: { searchInput: string }) {
+export default function GridComponent({searchInput, filters}: {
+    searchInput: string,
+    filters: string[]
+}) {
     const [devices, setDevices] = useState([]);
 
     useEffect(() => {
@@ -14,10 +17,9 @@ export default function GridComponent({searchInput}: { searchInput: string }) {
             try {
                 const {devices} = await getData();
                 const filteredDevices = devices.filter((device: ProductProps["devices"][0]) => {
-                    if (device && device.product?.name) {
-                        return device.product?.name.toLowerCase().includes(searchInput.toLowerCase());
-                    }
-                    return false;
+                    const deviceNameMatch = device.product?.name?.toLowerCase().includes(searchInput.toLowerCase());
+                    const lineNameMatch = filters.length === 0 || filters.includes(device.line?.name || "");
+                    return deviceNameMatch && lineNameMatch;
                 });
                 setDevices(filteredDevices);
             } catch (error) {
@@ -26,7 +28,7 @@ export default function GridComponent({searchInput}: { searchInput: string }) {
         };
 
         fetchData().then();
-    }, [searchInput]);
+    }, [searchInput, filters]);
 
     return (
         <div>

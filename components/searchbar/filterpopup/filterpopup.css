@@ -40,6 +40,11 @@
     color: #F03A3E;
 }
 
+.inactiveFilterReset {
+    color: #F9B0B2;
+    pointer-events: none;
+}
+
 @media screen and (max-width: 650px) {
     .searchBarFilterPopup {
         margin-right: 32vw;
