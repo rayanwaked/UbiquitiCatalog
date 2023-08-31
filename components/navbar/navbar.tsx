@@ -14,7 +14,7 @@ export default function NavBar() {
 
             <div className="spacer"/>
 
-            <p>Author/Developer Name</p>
+            <p>Ryan Waked</p>
         </div>
     );
 }

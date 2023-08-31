@@ -13,15 +13,19 @@ import {ListVisibleRowsCountWrapper} from "@/app/catalog/list/list";
 
 export type ViewModeChangeHandler = (mode: "list" | "grid") => void;
 
-export default function SearchBar({onViewModeChange}: { onViewModeChange: ViewModeChangeHandler }) {
+export default function SearchBar({onViewModeChange}: {
+    onViewModeChange: ViewModeChangeHandler
+}) {
     const [viewMode, setViewMode] = useState<"list" | "grid">("list");
     const [isFilterVisible, setFilterVisible] = useState(false);
+    const [searchValue, setSearchValue] = useState("");
     const visibleGridRowsCount = GridVisibleRowsCountWrapper();
     const visibleListRowsCount = ListVisibleRowsCountWrapper();
 
 
-    function handleFilter() {
-        // Apply filters to your data here
+    function handleFilter(event: React.ChangeEvent<HTMLInputElement>) {
+        const inputValue = event.target.value;
+        setSearchValue(inputValue); // Update the search value state
     }
 
     function togglePopup() {
@@ -40,6 +44,7 @@ export default function SearchBar({onViewModeChange}: { onViewModeChange: ViewMo
                     <Image className={"searchBarIcon"} src={SearchIcon} alt={"Icon"} width={14} height={14}/>
                     <input
                         placeholder={"Search"}
+                        value={searchValue}
                         onChange={handleFilter}
                     />
                 </div>

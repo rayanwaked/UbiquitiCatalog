@@ -4,6 +4,7 @@ import React, {useEffect, useState} from "react";
 import SearchBar from "@/components/searchbar/searchbar";
 import ListComponent from "@/app/catalog/list/list";
 import GridComponent from "@/app/catalog/grid/grid";
+import {SearchProvider} from "@/components/searchbar/data/searchcontext";
 
 // Present the data to the user
 export default function CatalogPage() {
@@ -15,9 +16,11 @@ export default function CatalogPage() {
 
     return (
         <div>
-            <SearchBar onViewModeChange={setViewMode}/>
-            {viewMode === "list" && <ListComponent/>}
-            {viewMode === "grid" && <GridComponent/>}
+            <SearchProvider>
+                <SearchBar onViewModeChange={setViewMode}/>
+                {viewMode === "list" && <ListComponent/>}
+                {viewMode === "grid" && <GridComponent/>}
+            </SearchProvider>
         </div>
     );
 }

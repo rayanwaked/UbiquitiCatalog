@@ -24,12 +24,22 @@ export function findDeviceByName(
     deviceName: string,
     devices: ProductProps['devices']
 ) {
-    const foundDevice = devices?.find((device) => {
-        // console.log("Comparing device name:", device.product?.name);
-        // console.log("With provided name:", deviceName);
-        return device.product?.name === deviceName;
-    });
+    const deviceIndex = devices.findIndex(device => device.product?.name === deviceName);
 
-    // console.log("Found device", foundDevice);
-    return foundDevice || null;
+    if (deviceIndex === -1) {
+        return null;
+    }
+
+    const previousDevice = deviceIndex > 0 ? devices[deviceIndex - 1].product?.name : null;
+    const nextDevice = deviceIndex < devices.length - 1 ? devices[deviceIndex + 1].product?.name : null;
+    const foundDevice = devices[deviceIndex];
+
+    console.log(previousDevice)
+    console.log(nextDevice)
+
+    return {
+        previousDevice,
+        foundDevice,
+        nextDevice
+    };
 }

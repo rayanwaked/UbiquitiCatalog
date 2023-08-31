@@ -2,31 +2,33 @@
 
 import React, {useEffect, useState} from "react";
 import "./list.css";
-import {getData} from "@/app/catalog/data/data";
+import {getData, ProductProps} from "@/app/catalog/data/data";
 import ClickableDevice from "@/app/catalog/list/device";
-import {useVisibleRowsCount} from "@/components/searchbar/rowcount";
-
+import {useVisibleRowsCount} from "@/components/searchbar/data/rowcount";
+import {useSearchValue} from "@/components/searchbar/data/searchcontext";
 
 export default function ListComponent() {
+    const {searchValue} = useSearchValue();
     const [devices, setDevices] = useState([]);
-    const [searchPhrase, setSearchPhrase] = useState('');
-
-    // const filteredDevices = devices.filter(device =>
-    //     device.product?.name.toLowerCase().includes(searchPhrase.toLowerCase())
-    // );
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const {devices} = await getData();
                 setDevices(devices);
+
+                // Filter devices based on searchValue
+                const filteredDevices = devices.filter((devices: ProductProps) =>
+                    devices.product?.name.toLowerCase().includes(searchValue.toLowerCase())
+                );
+                setDevices(filteredDevices);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
         };
 
         fetchData().then();
-    }, []);
+    }, [searchValue]);
 
     return (
         <div>

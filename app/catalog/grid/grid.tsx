@@ -4,7 +4,7 @@ import React, {useEffect, useState} from "react";
 import "./grid.css";
 import {getData} from "@/app/catalog/data/data";
 import ClickableDevice from "@/app/catalog/grid/device";
-import {useVisibleRowsCount} from "@/components/searchbar/rowcount";
+import {useVisibleRowsCount} from "@/components/searchbar/data/rowcount";
 
 export default function GridComponent() {
     const [devices, setDevices] = useState([]);

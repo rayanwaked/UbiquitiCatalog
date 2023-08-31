@@ -26,17 +26,17 @@ export default function ProductPage() {
         async function fetchDataAndFindDevice() {
             try {
                 const devicesData = await getData();
-                const foundDevice = findDeviceByName(deviceName, devicesData.devices);
+                const display = findDeviceByName(deviceName, devicesData.devices);
                 document.title = deviceName
 
-                if (foundDevice) {
-                    const deviceShortName = foundDevice.shortnames || "n/a";
-                    const deviceId = foundDevice.line?.id || "n/a";
-                    const deviceLine = foundDevice.line?.name || "n/a";
-                    const deviceImageId = foundDevice.icon?.id || "n/a";
-                    const deviceMaxPower = foundDevice.unifi?.network?.radios?.maxPower || "n/a";
-                    const deviceNumberOfPorts = foundDevice.unifi?.network?.numberOfPorts || "n/a";
-                    const deviceSpeed = foundDevice.unifi?.network?.ethernetMaxSpeedMegabitsPerSecond || "n/a";
+                if (display) {
+                    const deviceShortName = display.foundDevice.shortnames || "n/a";
+                    const deviceId = display.foundDevice.line?.id || "n/a";
+                    const deviceLine = display.foundDevice.line?.name || "n/a";
+                    const deviceImageId = display.foundDevice.icon?.id || "n/a";
+                    const deviceMaxPower = display.foundDevice.unifi?.network?.radios?.maxPower || "n/a";
+                    const deviceNumberOfPorts = display.foundDevice.unifi?.network?.numberOfPorts || "n/a";
+                    const deviceSpeed = display.foundDevice.unifi?.network?.ethernetMaxSpeedMegabitsPerSecond || "n/a";
 
                     setProductInfo({
                         deviceName: deviceName,
