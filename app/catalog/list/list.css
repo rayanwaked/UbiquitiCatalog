@@ -2,28 +2,33 @@
     font-size: 14px;
 }
 
+.listTableContainer {
+    overflow-y: scroll;
+    height: 90vh;
+}
+
 .listTable tr {
     margin: 0 32px 0 32px;
 }
 
 .fixedTableHeader {
     position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
 }
 
 .listTableHeader {
     display: flex;
     flex-direction: row;
     align-items: center;
-    position: sticky;
 
     font-family: "UI Sans Bold", sans-serif;
     font-weight: bold;
     font-size: 14px;
 
     height: 32px;
-    width: calc(100vw - 20px - 16px - 32px);
 
-    background: #FFFFFF;
     border-bottom: 1px solid rgb(237, 237, 240);
 }
 
@@ -92,18 +97,34 @@
 
 @media screen and (max-width: 650px) {
     .listTableContainer {
-        max-height: 90vh;
-        overflow-y: auto;
-        overflow-x: hidden;
-        position: relative;
+        overflow-y: scroll;
+        height: 90vh;
     }
 
     .listTable {
-        margin: 32px 0 0 0;
+        margin: 24px 0 0 0;
 
         font-family: "UI Sans", sans-serif;
         font-weight: normal;
         font-size: 14px;
 
+    }
+
+    .listTableHeader {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        font-family: "UI Sans Bold", sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+
+        height: 60px;
+
+        border-bottom: 1px solid rgb(237, 237, 240);
+
+        padding-top: 18px;
+
+        background: white;
     }
 }

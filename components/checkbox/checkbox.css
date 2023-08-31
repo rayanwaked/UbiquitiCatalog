@@ -18,12 +18,14 @@
     left: 0;
     height: 16px;
     width: 16px;
-    background-color: #eee;
+    background-color: #FFFFFF;
+    border: 1px solid #B6B9C4;
     border-radius: 4px;
 }
 
 .custom-checkbox input:checked + .checkmark {
     background-color: #006FFF;
+    border: 0;
 }
 
 .checkmark:after {

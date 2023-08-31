@@ -24,30 +24,28 @@ export default function ListComponent() {
     }, []);
 
     return (
-        <div>
-            <div className={"listTableContainer"}>
-                <table className={"listTable"}>
-                    <thead className="fixedTableHeader">
-                    <tr className={"listTableHeader"}>
-                        <th className={"listTableColumnOne"}></th>
-                        <th className={"listTableColumnTwo"}>Product Line</th>
-                        <th className={"listTableColumnThree listNameColor"}>
-                            Name
-                        </th>
-                    </tr>
-                    </thead>
+        <div className={"listTableContainer"}>
+            <table className={"listTable"}>
+                <thead className="fixedTableHeader">
+                <tr className={"listTableHeader"}>
+                    <th className={"listTableColumnOne"}></th>
+                    <th className={"listTableColumnTwo"}>Product Line</th>
+                    <th className={"listTableColumnThree listNameColor"}>
+                        Name
+                    </th>
+                </tr>
+                </thead>
 
-                    <tbody>
-                    {devices.map((device, index) => (
-                        <tr key={index}>
-                            <td tabIndex={0}>
-                                <ClickableDevice device={device}/>
-                            </td>
-                        </tr>
-                    ))}
-                    </tbody>
-                </table>
-            </div>
+                <tbody>
+                {devices.map((device, index) => (
+                    <tr key={index}>
+                        <td tabIndex={0}>
+                            <ClickableDevice device={device}/>
+                        </td>
+                    </tr>
+                ))}
+                </tbody>
+            </table>
         </div>
     );
 }
