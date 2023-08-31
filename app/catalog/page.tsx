@@ -8,6 +8,7 @@ import GridComponent from "@/app/catalog/grid/grid";
 // Present the data to the user
 export default function CatalogPage() {
     const [viewMode, setViewMode] = useState<"list" | "grid">("list");
+    const [searchInput, setSearchInput] = useState("");
 
     useEffect(() => {
         document.title = "Ubiquiti Catalog";
@@ -15,9 +16,9 @@ export default function CatalogPage() {
 
     return (
         <div>
-            <SearchBar onViewModeChange={setViewMode}/>
-            {viewMode === "list" && <ListComponent/>}
-            {viewMode === "grid" && <GridComponent/>}
+            <SearchBar onViewModeChange={setViewMode} setSearchInput={setSearchInput}/>
+            {viewMode === "list" && <ListComponent searchInput={searchInput}/>}
+            {viewMode === "grid" && <GridComponent searchInput={searchInput}/>}
         </div>
     );
 }

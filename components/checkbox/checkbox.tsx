@@ -1,19 +1,12 @@
-import React, {useState} from 'react';
-import './checkbox.css';
+import "./checkbox.css"
 
-const CustomCheckbox: React.FC = () => {
-    const [isChecked, setIsChecked] = useState(false);
-
-    const handleCheckboxChange = () => {
-        setIsChecked(!isChecked);
-    };
-
+const CustomCheckbox: React.FC<{ isChecked: boolean; onChange: () => void }> = ({isChecked, onChange}) => {
     return (
         <label className="custom-checkbox">
             <input
                 type="checkbox"
                 checked={isChecked}
-                onChange={handleCheckboxChange}
+                onChange={onChange}
             />
             <span className="checkmark"></span>
         </label>

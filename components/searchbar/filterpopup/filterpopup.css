@@ -1,0 +1,39 @@
+
+.searchBarFilterPopup {
+    width: 134px;
+    height: 264px;
+    background: #FFFFFF;
+    box-shadow: 0 16px 32px 0 rgba(28, 30, 45, 0.20);
+    border-radius: 8px;
+
+    position: absolute;
+    padding-left: 16px;
+
+    gap: 8px;
+    top: 36px;
+}
+
+.filterHeader {
+    font-family: "UI Sans Bold", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: black;
+
+    margin: 16px 0 16px 0;
+}
+
+.filterTypeContainer {
+    display: flex;
+    gap: 8px;
+    margin: 10px 0 10px 0;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.filterTypeContainer p {
+    margin-top: -3px;
+}
+
+.filterReset {
+    padding-top: 8px;
+    color: #F03A3E;
+}

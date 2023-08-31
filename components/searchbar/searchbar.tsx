@@ -10,24 +10,19 @@ import GridIcon from "../../public/gridicon.svg";
 import GridIconActive from "../../public/gridiconactive.svg"
 import {GridVisibleRowsCountWrapper} from "@/app/catalog/grid/grid";
 import {ListVisibleRowsCountWrapper} from "@/app/catalog/list/list";
-import CustomCheckbox from "@/components/checkbox/checkbox";
+import FilterPopup from "@/components/searchbar/filterpopup/filterpopup";
 
 export type ViewModeChangeHandler = (mode: "list" | "grid") => void;
 
-export default function SearchBar({onViewModeChange}: {
-    onViewModeChange: ViewModeChangeHandler
+export default function SearchBar({onViewModeChange, setSearchInput}: {
+    onViewModeChange: ViewModeChangeHandler,
+    setSearchInput: React.Dispatch<React.SetStateAction<string>>
 }) {
     const [viewMode, setViewMode] = useState<"list" | "grid">("list");
+    const [searchInput, setSearchInputLocal] = useState("");
     const [isFilterVisible, setFilterVisible] = useState(false);
-    const [searchValue, setSearchValue] = useState("");
-    const visibleGridRowsCount = GridVisibleRowsCountWrapper();
-    const visibleListRowsCount = ListVisibleRowsCountWrapper();
-
-
-    function handleFilter(event: React.ChangeEvent<HTMLInputElement>) {
-        const inputValue = event.target.value;
-        setSearchValue(inputValue); // Update the search value state
-    }
+    const visibleGridRowsCount = GridVisibleRowsCountWrapper({searchInput});
+    const visibleListRowsCount = ListVisibleRowsCountWrapper({searchInput});
 
     function togglePopup() {
         setFilterVisible(!isFilterVisible);
@@ -38,15 +33,22 @@ export default function SearchBar({onViewModeChange}: {
         onViewModeChange(mode);
     }
 
+    function handleSearchInputChange(value: string) {
+        setSearchInputLocal(value);
+        setSearchInput(value);
+    }
+
     return (
+        // Search Field
         <div className={"searchBarContainer"}>
             <div className={"searchBarAndCount"}>
                 <div className={"searchBar"}>
                     <Image className={"searchBarIcon"} src={SearchIcon} alt={"Icon"} width={14} height={14}/>
                     <input
-                        placeholder={"Search"}
-                        value={searchValue}
-                        onChange={handleFilter}
+                        type="text"
+                        placeholder="Search"
+                        value={searchInput}
+                        onChange={(e) => handleSearchInputChange(e.target.value)}
                     />
                 </div>
                 <p className={"searchBarCount"}>{viewMode === "list" ? visibleListRowsCount : visibleGridRowsCount}</p>
@@ -54,6 +56,7 @@ export default function SearchBar({onViewModeChange}: {
 
             <div className={"spacer"}/>
 
+            {/*Search Controls*/}
             <div className={"searchBarControlsAndFilter"}>
                 <div className={"searchBarControls"}>
                     <button onClick={() => handleViewModeChange("list")}>
@@ -68,36 +71,7 @@ export default function SearchBar({onViewModeChange}: {
                     <button onClick={togglePopup}>Filter</button>
                 </div>
                 {isFilterVisible && (
-                    <div className="searchBarFilterPopup">
-                        <div className={"filterHeader"}>
-                            <p>Product Line</p>
-                        </div>
-                        <div className={"filterTypeContainer"}>
-                            <CustomCheckbox/>
-                            <p>UniFi</p>
-                        </div>
-                        <div className={"filterTypeContainer"}>
-                            <CustomCheckbox/>
-                            <p>UniFi LTE</p>
-                        </div>
-                        <div className={"filterTypeContainer"}>
-                            <CustomCheckbox/>
-                            <p>UniFi Protect</p>
-                        </div>
-                        <div className={"filterTypeContainer"}>
-                            <CustomCheckbox/>
-                            <p>UniFi Access</p>
-                        </div>
-                        <div className={"filterTypeContainer"}>
-                            <CustomCheckbox/>
-                            <p>airMax</p>
-                        </div>
-                        <div className={"filterTypeContainer"}>
-                            <CustomCheckbox/>
-                            <p>EdgeMax</p>
-                        </div>
-                        <p className={"filterReset"}>Reset</p>
-                    </div>
+                    FilterPopup()
                 )}
             </div>
         </div>
