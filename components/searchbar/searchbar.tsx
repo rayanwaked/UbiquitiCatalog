@@ -69,10 +69,8 @@ export default function SearchBar({onViewModeChange, setSearchInput}: {
                                width={14} height={14}/>
                     </button>
                     <button onClick={togglePopup}>Filter</button>
+                    {isFilterVisible && <FilterPopup/>}
                 </div>
-                {isFilterVisible && (
-                    FilterPopup()
-                )}
             </div>
         </div>
     );

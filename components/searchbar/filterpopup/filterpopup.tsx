@@ -21,11 +21,10 @@ export default function FilterPopup() {
         });
     };
 
-    const filteredItems = Object.keys(checkboxState).filter((checkboxName) => checkboxState[checkboxName]);
-
     return (
         <div className="searchBarFilterPopup">
-            {filteredItems.map((item) => (
+            <p className={"filterHeader"}>Product line</p>
+            {Object.keys(checkboxState).map((item) => (
                 <div key={item} className={"filterTypeContainer"}>
                     <CustomCheckbox
                         isChecked={checkboxState[item]}
@@ -34,6 +33,7 @@ export default function FilterPopup() {
                     <p>{item}</p>
                 </div>
             ))}
+            <button className={"filterReset"}>Reset</button>
         </div>
     );
 }
